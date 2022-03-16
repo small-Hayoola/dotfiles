@@ -1,0 +1,40 @@
+general {
+    colors = true
+}
+
+
+
+order += "disk /"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+order += "tztime berlin"
+
+disk "/" {
+        format = "💾 %free"
+}
+
+memory {
+        format = "🛡 %used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+volume master {
+        format = "🎵: %volume"
+        format_muted = "🎵: muted (%volume)"
+        device = "pulse"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+        format = "🗓️ %Y-%m-%d %H:%M:%S"
+        hide_if_equals_localtime = true
+}
+
+
+tztime berlin {
+        format = "🗓️ %Y-%m-%d %H:%M:%S %Z"
+        timezone = "Asia/Tehran"
+}
