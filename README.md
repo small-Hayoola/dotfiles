@@ -1,2 +1,3 @@
 # dotfiles
-my workstation dotfiles
+my workstation dotfiles        
+note: requires Source Code Pro fonts
