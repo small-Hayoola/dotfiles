@@ -15,7 +15,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the ar unless a different font
 # is used in the bar {} block below.
-font pango:Source Sans 3 7
+font pango:Source Sans 3 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -187,11 +187,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	tray_output none
+	font pango:Source Sans 3, FontAwesome 13
+	position top
         status_command i3status
 	colors {
-	   statusline #c4c4c4
-           separator #545454
-	   focused_workspace  #566644  #6d8257     #1F2D3A
+	   background #1c1c1c
+	   statusline #ababab
+           separator #1c1c1c
+	   focused_workspace  #4d4d4d  #4d4d4d     #ededed
+	   inactive_workspace #1c1c1c  #1c1c1c     #969696
 	}
 }
 
@@ -203,4 +208,15 @@ gaps inner 18
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b
-exec --no-startup-id xrandr -s 7
+exec --no-startup-id xrandr -s 1920x1080
+bindsym $mod+Ctrl+Shift+Right resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Up resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Down resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Left resize grow width 10 px or 10 ppt
+
+
+
+client.focused         #13636e #13636e #13636e #13636e   #13636e
+
+
+

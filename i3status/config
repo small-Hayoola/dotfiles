@@ -1,27 +1,24 @@
 general {
     colors = true
+    markup = "pango"
 }
 
 
 
-order += "disk /"
 order += "memory"
 order += "volume master"
 order += "tztime local"
 order += "tztime berlin"
 
-disk "/" {
-        format = "💾 %free"
-}
 
 memory {
-        format = "🛡 %used"
+        format = "<span size='12pt' color='#d1d1d1' background='#9c3400'> RAM: %used </span>"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 volume master {
-        format = "🎵: %volume"
+        format = "<span size='12pt' color='#d1d1d1' background='#9c6a00'>  VOL: %volume  </span>"
         format_muted = "🎵: muted (%volume)"
         device = "pulse"
         mixer = "Master"
@@ -35,6 +32,6 @@ tztime local {
 
 
 tztime berlin {
-        format = "🗓️ %Y-%m-%d %H:%M:%S %Z"
+        format = "<span size='12pt' color='#d1d1d1' background='#036117'> TIME: %H:%M:%S </span>"
         timezone = "Asia/Tehran"
 }
